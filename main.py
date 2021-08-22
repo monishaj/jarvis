@@ -147,12 +147,7 @@ if __name__ == "__main__":
             cpu()    
         elif "joke" in query:
             jokes() 
-        elif "wikipedia" in query:
-            speak("searching.......")
-            query = query.replace("wikipedia","")
-            result = wikipedia.summary(query, sentences=2)
-            print(result)
-            speak(result)
+        
         elif"alarm" in query:
             speak("enter the time !")
             time=input(":enter the time :")
@@ -167,6 +162,13 @@ if __name__ == "__main__":
 
                 elif now>time:
                     break
+        elif "wikipedia" in query:
+            speak("searching in wikipedia")
+            query = query.replace("wikipedia", "")
+            results= wikipedia.summary(query, sentences = 2)
+            speak("according to wikipedia")
+            speak(results)
+            print(results)       
 
 
 
